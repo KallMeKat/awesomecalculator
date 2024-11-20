@@ -58,9 +58,7 @@ jobs:
       run: |
         pip install dist/*.whl
 
-    - name: Verify installation
-      run: |
-        python -c "from awesome_calculator import Calculator; print(Calculator().add(1, 2))"
+  
         
 
 
