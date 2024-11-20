@@ -48,6 +48,20 @@ jobs:
         name: awesome-calculator
         path: src/dist  
         
+    - name: Download artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: awesome-calculator
+        path: dist
+
+    - name: Install wheel
+      run: |
+        pip install dist/*.whl
+
+    - name: Verify installation
+      run: |
+        python -c "from awesome_calculator import Calculator; print(Calculator().add(1, 2))"
+        
 
 
 
